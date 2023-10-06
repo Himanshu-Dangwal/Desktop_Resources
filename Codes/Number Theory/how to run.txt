@@ -1,2 +1,0 @@
-clang++ -std=c++17 hello.cpp -o hello 
-./hello
