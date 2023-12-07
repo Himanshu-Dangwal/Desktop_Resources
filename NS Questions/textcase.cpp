@@ -8,22 +8,11 @@ int main()
 
     cout << n << endl;
 
-    unordered_set<int> st;
-
     for (int i = 0; i < n; i++)
     {
-        while (true)
-        {
-            int x = rand() % n;
-            x++;
-
-            if (st.find(x) == st.end())
-            {
-                st.insert(x);
-                cout << x << " ";
-                break;
-            }
-        }
+        int val = rand() % 50;
+        val++;
+        cout << val << " ";
     }
     return 0;
 }
