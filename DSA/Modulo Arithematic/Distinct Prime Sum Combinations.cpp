@@ -24,7 +24,7 @@ int countWays(int N, int lastPrime)
         return 0;
 
     int ways = 0;
-    for (int nextPrime = lastPrime + 1; nextPrime <= N; ++nextPrime)
+    for (int nextPrime = lastPrime; nextPrime <= N; ++nextPrime)
     {
         if (isPrime(nextPrime))
         {

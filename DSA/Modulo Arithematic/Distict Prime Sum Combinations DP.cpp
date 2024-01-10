@@ -33,7 +33,7 @@ int main()
 
     for (int prime : primes)
     {
-        for (int i = N; i >= prime; --i)
+        for (int i = prime; i <= N; i++)
         {
             dp[i] = (dp[i] + dp[i - prime]) % MOD;
         }
