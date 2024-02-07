@@ -5,24 +5,32 @@ bool searchInRotated2DArray(vector<vector<int>> &matrix, int target)
 {
     int rows = matrix.size();
     int cols = matrix[0].size();
-    int low = 0, high = rows * cols - 1;
 
-    while (low <= high)
+    int rowNo = -1;
+    for (int i = 0; i < rows; i++)
     {
-        int mid = low + (high - low) / 2;
-        int midVal = matrix[mid / cols][mid % cols];
+        if (matrix[i][0] <= target && matrix[i][cols - 1] >= target)
+        {
+            rowNo = i;
+            int low = 0, high = cols - 1;
+            while (low <= high)
+            {
+                int mid = low + (high - low) / 2;
 
-        if (midVal == target)
-        {
-            return true;
-        }
-        else if (midVal < target)
-        {
-            low = mid + 1;
-        }
-        else
-        {
-            high = mid - 1;
+                if (matrix[rowNo][mid] == target)
+                {
+                    return true;
+                }
+
+                if (matrix[rowNo][mid] < target)
+                {
+                    low = mid + 1;
+                }
+                else
+                {
+                    high = mid - 1;
+                }
+            }
         }
     }
 

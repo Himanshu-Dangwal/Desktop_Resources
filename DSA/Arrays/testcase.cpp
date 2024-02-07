@@ -10,12 +10,12 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        int val = rand() % 50;
-        val++;
-        cout << val << " ";
+        for (int j = 0; j < n; j++)
+        {
+            cout << i + j << " ";
+        }
+        cout << endl;
     }
-    cout << endl;
-    int x = rand() % 50;
-    cout << x;
-    return 0;
+
+    cout << n / 2;
 }
