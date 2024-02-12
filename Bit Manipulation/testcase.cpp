@@ -8,9 +8,9 @@ int main()
 
     cout << n << endl;
 
-    for (int i = 0; i < n; i++)
+    for (int i = n; i >= 1; i--)
     {
-        int x = rand() % 10000;
+        int x = rand() % 100000;
         cout << x << " ";
     }
     return 0;
