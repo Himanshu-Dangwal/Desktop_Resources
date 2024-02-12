@@ -14,8 +14,6 @@ int main()
         val++;
         cout << val << " ";
     }
-    cout << endl;
-    int x = rand() % 50;
-    cout << x;
+
     return 0;
 }
