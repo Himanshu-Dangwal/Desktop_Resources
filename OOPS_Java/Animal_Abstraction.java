@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public abstract class Animal {
+abstract class Animal {
     String name;
     int age;
 
