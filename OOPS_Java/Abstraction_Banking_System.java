@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-class BankAccount {
+class Bank_Account {
     private double balance;
 
     // Constructor to initialize the balance
-    public BankAccount(double initialBalance) {
+    public Bank_Account(double initialBalance) {
         balance = initialBalance;
     }
 
@@ -39,7 +39,7 @@ public class Abstraction_Banking_System {
         Scanner scanner = new Scanner(System.in);
 
         double amount = scanner.nextDouble();
-        BankAccount account = new BankAccount(amount);
+        Bank_Account account = new Bank_Account(amount);
 
         System.out.println("Initial balance: " + account.getBalance());
 
