@@ -32,7 +32,7 @@ int main()
     {
         for (int j = i + 1; j < N; j++)
         {
-            result = (result * lcm(arr[i], arr[j])) % MOD;
+            result = (result * lcm(abs(arr[i]), abs(arr[j]))) % MOD;
         }
     }
 
