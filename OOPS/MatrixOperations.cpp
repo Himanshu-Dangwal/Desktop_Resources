@@ -26,7 +26,6 @@ public:
     // Member function to display the matrix
     void displayMatrix()
     {
-
         for (int i = 0; i < size; ++i)
         {
             for (int j = 0; j < size; ++j)
