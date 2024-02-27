@@ -7,10 +7,10 @@ int main()
     cin >> n;
 
     cout << n << endl;
-
-    for (int i = n; i >= 1; i--)
+    srand(time(0));
+    for (int i = 0; i < 2 * n; i++)
     {
-        int x = rand() % 100000;
+        int x = rand() % 1000;
         cout << x << " ";
     }
     return 0;
