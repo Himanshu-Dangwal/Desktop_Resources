@@ -22,9 +22,10 @@ int main()
     for (int i = 0; i < pattern.length(); i++)
     {
         hash_pattern += ((pattern[i] - 'a' + 1) * powers[i]) % MOD;
+        cout << hash_pattern << endl;
     }
 
-    // cout << hash_pattern << endl;
+    cout << hash_pattern << endl;
 
     vector<int> hash_text(text.length(), 0);
     ll hash_val = 0;
@@ -34,11 +35,11 @@ int main()
         hash_text[i] = hash_val;
     }
 
-    // for (int x : hash_text)
-    // {
-    //     cout << x << " ";
-    // }
-    // cout << endl;
+    for (int x : hash_text)
+    {
+        cout << x << " ";
+    }
+    cout << endl;
 
     for (int i = 0; i <= text.length() - pattern.length(); i++)
     {
@@ -52,10 +53,10 @@ int main()
             (curr_hash += MOD);
         curr_hash = curr_hash % MOD;
 
-        // cout << "Curr Hash = "
-        //      << curr_hash << endl;
+        cout << "Curr Hash = "
+             << curr_hash << endl;
         ll to_cmp_with = (powers[i] * hash_pattern) % MOD;
-        // cout << "To Compare with = " << to_cmp_with << endl;
+        cout << "To Compare with = " << to_cmp_with << endl;
         if (curr_hash == to_cmp_with)
         {
             cout << i << endl;
