@@ -34,7 +34,6 @@ int main()
         hash_val += ((text[i] - 'a' + 1) * powers[i]) % MOD;
         hash_text[i] = hash_val;
     }
-
     for (int x : hash_text)
     {
         cout << x << " ";
