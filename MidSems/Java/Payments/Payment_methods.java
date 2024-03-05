@@ -70,7 +70,7 @@ class OnlineShop {
 
     // Method to display payment details after processing the order
     public void displayPaymentDetails() {
-        System.out.println("P");
+        System.out.println("Payment Details:");
         System.out.println(paymentMethod.getPaymentDetails());
     }
 }
