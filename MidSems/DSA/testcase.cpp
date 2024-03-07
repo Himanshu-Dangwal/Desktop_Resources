@@ -3,16 +3,20 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cin >> n;
+    int n, m;
+    cin >> n >> m;
 
-    cout << n << endl;
+    cout << n << " " << m << endl;
     srand(time(0));
 
     for (int i = 0; i < n; i++)
     {
-        int val = rand() % 3;
-        cout << val << " ";
+        for (int j = 0; j < m; j++)
+        {
+            int val = rand() % 100;
+            cout << val << " ";
+        }
+        cout << endl;
     }
     return 0;
 }
