@@ -1,0 +1,25 @@
+Define a class named Faculty with the following characteristics:
+
+Data member name of String type to store the name of the faculty.
+Private data member basic of int type to store the basic component of salary.
+Constructor with name and basic as parameters to initialize all data members of the class.
+getSalary method to calculate and return double type salary (basic will be return here).
+getDetails method to return a String containing name & salary separated by space in "NAME SALARY" format.
+Define a class named AssistantProfessor which extends Faculty with the following characteristics:
+
+Data member DA of int type which is a percentage of the basic salary.
+Parameterized constructor (name, basic, DA) to initialize all data members of the class. Call the base class constructor to initialize the name & basic.
+Override getSalary to calculate and return salary as, "basic + ((basic * DA)/100)".
+getDetails method to return name & salary separated by space in "AssiProf NAME SALARY" format.
+Define AssociateProfessor which extends AssistantProfessor with the following characteristics:
+
+Data member MedAllowance (integer type) which is a fixed amount.
+Parameterized constructor (name, basic, DA, MedAllowance) to initialize all data members of the class. Call the base class constructor to initialize other values.
+Override getSalary to calculate and return salary as, "basic + ((basic * DA)/100) + MedAllowance".
+getDetails method to return name & salary separated by space in "AssoProf NAME SALARY" format.
+Define Professor which extends AssociateProfessor with the following characteristics:
+
+Data member OtherAllowance (int type) which is a percentage of the total income.
+Parameterized constructor (name, basic, DA, MedAllowance, OtherAllowance) to initialize all data members of the class.
+Override getSalary to calculate and return salary as, "Salary of AssociateProfessor" + (OtherAllowance% of "Salary of AssociateProfessor").
+getDetails method to return name & salary separated by space in "Prof NAME SALARY" format.

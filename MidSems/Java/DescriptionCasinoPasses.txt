@@ -1,0 +1,7 @@
+You and your friends have planned a trip to visit a Casino. You bought entry passes for your friends but only individuals aged 18 and above are allowed. Akash is 17 years old and isn’t eligible to visit the casino. He got angry with you and tore all the passes in two and threw them away. You were terrified by Akash’s action and broke your friendship with him. You still want to go to the casino and for that, you need to restore the passes with the remaining torn pieces as some pieces are lost.
+
+Each pass possesses a unique property that the numbers in the pass are divisible by 3. You choose several piece pairs and staple each pair together so that each pair forms a valid pass property. Thus, after the stapling of the 2t pieces you end up with t passes, each of which is valid.
+
+You can staple every pair of pieces in any way you like but the number in the pass must be divisible by 3 to make it a valid pass. For example, pieces 153 and 96 can be stapled in two ways: 15396 and 96153.
+
+What maximum number of passes could you get after that?

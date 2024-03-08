@@ -1,0 +1,31 @@
+Consider an Online Shopping System with the following components:
+
+Interface PaymentMethod:
+
+Method: processPayment(double amount) - To process the payment for the given amount.
+Method: getPaymentDetails() - To retrieve the payment details.
+Class CreditCardPayment implementing PaymentMethod:
+
+Data members: cardNumber (long), expiryDate (String).
+Parameterized constructor to initialize card details.
+Implement the methods of the PaymentMethod interface.
+processPayment() prints : "Credit Card Transaction Authorized."
+getPaymentDetails() prints the - "Card Number and Expiry Date" 
+See Sample Output Section
+Class PayPalPayment implementing PaymentMethod:
+
+Data members: email (String).
+Parameterized constructor to initialize PayPal details.
+Implement the methods of the PaymentMethod interface.
+processPayment() prints : "PayPal Transaction Processed."
+getPaymentDetails() prints the - "Email" 
+See Sample Output Section
+Class OnlineShop:
+
+Data member: paymentMethod (PaymentMethod).
+Constructor to set the paymentMethod
+Method: processOrder(double totalAmount) - It used the paymentMethod to processPayment
+Method: displayPaymentDetails() - To display the payment details after processing the order.
+It first prints - "Payment Details:" String,
+Then it calls the getPaymentDetails() with respect to the payment method.
+Write Java code for the above scenario. Make use of interfaces and method overriding.

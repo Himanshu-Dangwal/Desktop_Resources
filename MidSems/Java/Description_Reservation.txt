@@ -1,0 +1,25 @@
+Implement an abstract class Reservation and two subclasses ReserveTrain and ReserveBus:
+
+Define a Reservation abstract class with the following characteristics:
+
+Method reserve which takes integer value seats and typeOfSeat as parameters and returns boolean type.
+Method getAvailableSeats which returns the number of seats remaining.
+Define a ReserveBus with the following characteristics:
+
+Extends the Reservation class.
+Data member totalSeats as an integer.
+Parameterized constructor with totalSeats as a parameter to initialize data member.
+Method reserve to reserve the given number of seats and return true, and if the required number of seats is not available return false. (typeOfSeat parameter has no importance in this method)
+This reserve method will print - "Booked- seats", where seats is a variable, if those many seats can be booked and return true. Otherwise, it should print - "SEATS NOT AVAILABLE FOR BUS- seats", where seats is a variable and return false. {See Sample Input and Output Section}
+getAvailableSeats(): A method that will return the total available seats that can be reserved.
+Define a ReserveTrain with the following characteristics:
+
+Extends the Reservation class.
+Data members upperBirthTotalSeats, middleBirthTotalSeats and lowerBirthTotalSeats as an integer.
+Parameterized constructor with lowerBirthTotalSeats, middleBirthTotalSeats, and upperBirthTotalSeats as parameters to initialize data members.
+Method reserve to reserve the given number of seats for the given type of seat and return true, if the required number of seats is not available then return false.
+reserve method will recieve 2 parameters- the numberOfSeats, and the typeOfSeat (1 for lowerBirth, 2 for middleBirth and 3 for upperBirth).
+It will then try to reserve numberOfSeats of type typeOfSeat. If available :
+It should print - "Booked- numberOfSeats", and return true.
+Otherwise it should print - "SEATS NOT AVAILABLE FOR TRAIN- numberOfSeats" and return false.
+getAvailableSeats() : A method that will return the total available seats that can be reserved.
