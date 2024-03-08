@@ -33,7 +33,7 @@ class AssistantProfessor extends Faculty {
 
     @Override
     public String getDetails() {
-        return "AssiProf " + super.getDetails();
+        return "AssiProf " + this.name + " " + this.getSalary();
     }
 }
 
@@ -52,7 +52,7 @@ class AssociateProfessor extends AssistantProfessor {
 
     @Override
     public String getDetails() {
-        return "AssoProf " + super.getDetails();
+        return "AssoProf " + this.name + " " + this.getSalary();
     }
 }
 
@@ -71,7 +71,7 @@ class Professor extends AssociateProfessor {
 
     @Override
     public String getDetails() {
-        return "Prof " + super.getDetails();
+        return "Prof " + this.name + " " + this.getSalary();
     }
 }
 
