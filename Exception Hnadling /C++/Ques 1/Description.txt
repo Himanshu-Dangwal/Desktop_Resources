@@ -1,0 +1,8 @@
+Description :
+
+Given a number n, a low and a high value. 
+Determine if the total number of primes factors n have is between low and high or not. 
+If count of primes factors is less than low, throw error that "Count is less", 
+else if count is greater than high, throw error that "Count is high", 
+otherwise return that "Count is perfect".
+
