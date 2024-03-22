@@ -1,0 +1,29 @@
+#file: noinspection YAMLSchemaValidation
+kind: pipeline
+name: default
+
+steps:
+  - name: run-test-cases
+    image: python:3.11
+    when:
+      status:
+        - failure
+        - success
+    commands:
+      - git clone https://${GIT_ACCESS_TOKEN}@github.com/${GIT_REPO}.git
+      - cp -r test/ ${PROJECT_FOLDER_NAME}
+      - cp -r utils/ ${PROJECT_FOLDER_NAME}
+      - cd ${PROJECT_FOLDER_NAME}
+      - pip install -r requirement.txt
+      - env PROJECT_FOLDER_NAME=${PROJECT_FOLDER_NAME} pytest -v --junit-xml result.xml
+  - name: result
+    image: python:3.11
+    when:
+      status:
+        - failure
+        - success
+    depends_on:
+      - run-test-cases
+    commands:
+      - cd ${PROJECT_FOLDER_NAME}
+      - python3 utils/parser.py
