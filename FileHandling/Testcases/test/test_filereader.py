@@ -1,4 +1,4 @@
-import filereader 
+import "filereader from ../Solution/filereader"
 
 
 def test_read_file():

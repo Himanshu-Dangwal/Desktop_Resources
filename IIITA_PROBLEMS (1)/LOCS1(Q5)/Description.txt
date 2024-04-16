@@ -1,0 +1,28 @@
+You are given 2 array A and B. You have to find the longest odd length common subsequence which has middle element k.
+
+Input : 
+First line contains n, m which denote size of A and B.
+Next line contains n integers which are elements of A
+Next line contains m integers which are elements of B
+Next line contains K.
+
+<b>Constraints </b>
+k≤ 10^9.
+Len(A), Len(B) ≤1000
+
+
+Output : 
+Print length of LOCS. Print -1 if no such subsequence exists.
+
+Sample Input/Output and Explanation :
+<b>Sample Input</b>
+5 5
+1 2 3 4 5
+1 5 2 4 5
+2
+
+<b>Sample Output</b>
+3
+
+<b>Explanation </b>
+The LOCS for these arrays is either 1 2 5 or 1 2 4

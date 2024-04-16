@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="0.046" timestamp="2024-03-22T14:59:30.324167" hostname="MacBook-Pro-Himanshu.local"><testcase classname="" name="test.test_filereader" time="0.000"><error message="collection failure">ImportError while importing test module '/Users/himanshudangwal/Desktop/DSA-and-CP/FileHandling/Testcases/test/test_filereader.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+test/test_filereader.py:1: in &lt;module&gt;
+    import filereader
+E   ModuleNotFoundError: No module named 'filereader'</error></testcase></testsuite></testsuites>

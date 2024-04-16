@@ -5,5 +5,8 @@
     "vector": "cpp",
     "iosfwd": "cpp",
     "random": "cpp"
-  }
+  },
+  "python.analysis.extraPaths": [
+    "./FileHandling/Solution"
+  ]
 }
