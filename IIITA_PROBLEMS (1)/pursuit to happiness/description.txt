@@ -1,0 +1,35 @@
+Patrick embarked on an adventure on an island to collect the goodies for himself. The island is in the form of a rooted tree and he can only move toward the leaves of the tree. Patrick can start from any node to collect the goodies, with the condition that he must gather at least K goodies before leaving the island, and he cannot skip any goodies coming in his way. Each goodie has a happiness index associated with it, which can be negative. Help Patrick gather the goodies in a way that maximizes his happiness index. (print 0 if answer is not possible)
+
+
+Input : 
+First line contains two integers n and k.
+second line contains n integer which denotes happiness index of ith node.
+third line contains n integer which denotes the parent of the ith node.
+
+<b>CONSTRAINT </b>
+1≤n≤1e5
+m==n-1
+0≤k≤n
+-1e9≤a[i]≤1e9
+0≤b[i]<n
+where n is the number of nodes, m is the number of edges, a denotes the array where a[i] denotes the happiness index of ith node and b denotes the array where b[i] denotes the parent of the ith node. (b[0]=-1 as 0th node is the root of the tree)
+
+Output : 
+Output the maximum happiness index. Print 0 if answer is not possible or answer is negative.
+
+Sample Input/Output and Explanation : 
+
+<b>Sample Input </b>
+3 2
+-1 2 3
+-1 0 0
+
+<b>Sample Output</b>
+2
+
+EXPLANATION:- the graph looks like 
+      0(-1). 
+    /       \
+1(2)   2(3) 
+ 
+Now if there was no constraint on least amount of goodies to be picked, patricks can simply pick the goodie with node numbered 2 which will yield him happiness count of 3. But as he has to pick atleast two goodies and he can only traverse downward he has to pick node numbered 0 and 2 which will yield him happiness of 3+(-1)=2.
