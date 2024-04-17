@@ -1,0 +1,34 @@
+​You are given N nodes of a graphs. Each Node has a string associated with it which is made from lowercase and uppercase english characters. The distance between any 2 nodes is given by 1+ (Number of common characters)^2 between their strings. You can delete all occurences of any one character from all the strings in the graph.
+Which character should you delete to minimise
+N.  N
+∑.  ∑.   dist(ai,bj)
+i=1.j=1
+​
+  
+ where ai and bj represents the ith and jth node respectively. If any 2 characters would give same answer, print the lexiographically smallest character.
+
+
+ ​Input : 
+First line contains N, the number of Nodes.
+Next N lines contain 1 string each associated with ith node.
+
+<b>Constraints:</b>
+N≤100
+Strings have only lowercase and uppercase english characters.
+Strings have length≤ $10^4$
+
+Output : 
+Print the character and minimised value.
+
+Example : 
+<b>Sample </b>
+2
+aaa
+bbb
+
+<b>Sample Output</b>
+2 a
+
+<b>Explanation</b>
+Minimum distance between 1st and 2nd string is 1+0=1.
+Hence answer= 1+1 =2.
