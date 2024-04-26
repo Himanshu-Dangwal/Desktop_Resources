@@ -1,0 +1,21 @@
+docker run -it ubuntu
+
+hub.docker.com
+
+docker run -it -p 9000:9000 piyushgargdev/mynodeapp
+
+docker run -it -p 9000:9000 -e key=value -e key=value piyushgargdev/mynodeapp
+
+
+docker build -t image_name path_to_Dockerfile
+
+eg.
+
+docker build -t nodejs_docker_app .
+
+We can use  : docker-compose.yml to configure and run multiple services(Imaged) inside a container.
+
+create a docker-compose.yml file
+
+After this run : 
+docker compose up
