@@ -37,7 +37,7 @@ public class HashMapQuestion {
 
          // Get default value corrosponding to a key that is not present
          Integer defaultValue = mp.getOrDefault('f',6);
-         System.out.println("Default value corrosponding to f is " + defaultValue);
+         System.out.println("Default value is " + defaultValue);
 
         //Iterate (Method : 1)
 
