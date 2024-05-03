@@ -13,12 +13,12 @@ public class HashSetQuestion {
         }
 
         // Size
-        System.out.println("Size of HashSet is " + set.size());
+        System.out.println(set.size());
 
         // Check if HashSet contains value: 3
         int x = scn.nextInt();
         if (set.contains(x)) {
-            System.out.println("Value " +x+  " is present");
+            System.out.println("Yes");
         }
 
         // Iterate
@@ -29,7 +29,7 @@ public class HashSetQuestion {
         // Add Duplicate
         int duplicate = scn.nextInt();
         boolean added = set.add(duplicate);
-        System.out.println("Addition of " + duplicate + ": " + (added ? "Successful" : "Not successful"));
+        System.out.println(added ? "Successful" : "Not successful");
 
         // Remove
         int removeValue = scn.nextInt();

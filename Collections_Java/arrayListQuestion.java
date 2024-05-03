@@ -13,11 +13,11 @@ public class arrayListQuestion {
         }
 
         // Size
-        System.out.println("Size of ArrayList is " + numbers.size());
+        System.out.println(numbers.size());
 
         // Check if ArrayList contains value: 3
         if (numbers.contains(3)) {
-            System.out.println("Value 3 is present");
+            System.out.println("Yes");
         }
 
         // Iterate
@@ -28,9 +28,9 @@ public class arrayListQuestion {
         // IndexOf
         int index = numbers.indexOf(3);
         if (index != -1) {
-            System.out.println("Index of value 3: " + index);
+            System.out.println(index);
         } else {
-            System.out.println("Value 3 not found in ArrayList");
+            System.out.println("No");
         }
 
         // Remove
@@ -40,7 +40,7 @@ public class arrayListQuestion {
         }
 
         // Print size and ArrayList after remove
-        System.out.println("Size of ArrayList after remove: " + numbers.size());
+        System.out.println(numbers.size());
         for (Integer number : numbers) {
             System.out.println(number);
         }

@@ -20,18 +20,18 @@ public class HashMapQuestion {
         }
 
          //Size
-         System.out.println("Size of hashmap is " + mp.size());
+         System.out.println(mp.size());
 
          // Check if map contains key : 'a', if yes then get value corrosponding to 'a'
          if(mp.containsKey('a')){
             System.out.println("a is present");
             Integer value = mp.get('a');
-            System.out.println("Value is " + value);
+            System.out.println(value);
          }
 
          // Check if map contains value : 3
          if(mp.containsValue(3)){
-            System.out.println("Value 3 is present");
+            System.out.println("Yes");
          }
 
 

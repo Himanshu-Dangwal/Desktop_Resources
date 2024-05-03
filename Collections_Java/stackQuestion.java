@@ -13,17 +13,17 @@ public class stackQuestion {
         }
 
         // Size
-        System.out.println("Size of Stack is " + stack.size());
+        System.out.println(stack.size());
 
         // Peek
         if (!stack.isEmpty()) {
-            System.out.println("Top element of Stack: " + stack.peek());
+            System.out.println(stack.peek());
         }
 
         // Pop
         if (!stack.isEmpty()) {
             int popped = stack.pop();
-            System.out.println("Popped element: " + popped);
+            System.out.println(popped);
         }
 
         // Clear
