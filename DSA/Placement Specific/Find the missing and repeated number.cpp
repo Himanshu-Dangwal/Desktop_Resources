@@ -89,7 +89,68 @@ int main(){
 	
 }
 
+// Finding the mising and repeating number using leftmost set bit::
 
+/*
+class Solution {
+public:
+    vector<int> findErrorNums(vector<int>& nums) {
+        int n = nums.size();
+        int MxorR = 0;  //Missing xor Repeated
+        for(int i=1;i<=n;i++){
+            MxorR ^= nums[i-1];
+            MxorR ^= i;
+        }
+
+        int x = MxorR;
+        int len = 0;
+        while(x > 0){
+            x >>= 1;
+            len++;
+        }
+        
+        int leftmost_set_bit = 1 << (len-1);
+
+        int bucket1 = 0,bucket2 = 0;
+        for(int ele : nums){
+            if(ele&leftmost_set_bit){
+                bucket1 ^= ele;
+            }else{
+                bucket2 ^= ele;
+            }
+        }   
+
+        for(int i=1;i<=n;i++){
+            if(i&leftmost_set_bit){
+                bucket1 ^= i;
+            }else{
+                bucket2 ^= i;
+            }
+        }
+
+        //Traverse the array to find if bucket1 is the missing/repeating number
+        bool flag = true; //bucket1 is Missing
+        for(int i=0;i<n;i++){
+            if(nums[i] == bucket1){
+                flag = false; //Repeating
+                break;
+            }
+        }
+
+        vector<int> ans;
+        if(flag){
+            ans.push_back(bucket2);
+            ans.push_back(bucket1);
+        }else{
+            ans.push_back(bucket1);
+            ans.push_back(bucket2);
+        }
+
+        return ans;
+
+    }
+};
+*/
 
 
 
