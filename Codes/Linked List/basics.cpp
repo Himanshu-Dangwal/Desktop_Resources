@@ -74,6 +74,12 @@ void reverse(Node *&head)
     }
 
     head = prev;
+    // cout << "Printing Inside the reverse function" << endl;
+    // while (head != NULL)
+    // {
+    //     cout << head->val << " ";
+    //     head = head->next;
+    // }
 }
 
 Node *reverseRecursive(Node *head)
@@ -130,15 +136,15 @@ int main()
     insertAtTail(head, 6);
 
     display(head);
-
-    // reverse(head); //Iterative
+    cout << endl;
+    reverse(head); // Iterative
 
     // Node *newNode = reverseRecursive(head);
     // display(newNode);
 
-    Node *newHead = reverseK(head, 2);
-    display(newHead);
-
-    // display(head);
+    // Node *newHead = reverseK(head, 2);
+    // display(newHead);
+    cout << endl;
+    display(head);
     return 0;
 }
