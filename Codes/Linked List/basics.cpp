@@ -138,9 +138,12 @@ int main()
     display(head);
     cout << endl;
     reverse(head); // Iterative
+    cout << endl;
+    display(head);
+    cout << endl;
 
-    // Node *newNode = reverseRecursive(head);
-    // display(newNode);
+    Node *newNode = reverseRecursive(head);
+    display(newNode);
 
     // Node *newHead = reverseK(head, 2);
     // display(newHead);
