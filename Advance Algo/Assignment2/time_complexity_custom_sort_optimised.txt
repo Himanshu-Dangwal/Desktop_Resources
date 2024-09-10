@@ -1,0 +1,29 @@
+
+Time Complexity Analysis:
+
+1. Insertion into priority queue (pq):
+   - Inserting an element into a priority queue takes O(log n) time.
+   - The array elements are inserted into the priority queue one by one in the main function.
+   - Therefore, inserting n elements takes O(n log n) time.
+
+2. Function `fun(low, high, arr)`:
+   - This function performs two `pq.pop()` operations to retrieve the largest and second-largest elements. 
+     - Each pop operation takes O(log n) time.
+   - It also performs a `pq.push()` operation to reinsert the largest element, which also takes O(log n) time.
+   - Thus, the time complexity of the `fun` function is O(log n).
+
+3. Custom Sorting (`customSort` function):
+   - In the while loop (`while low < high`), the `fun` function is called `n-1` times to find the second-largest element, swap it, and reduce the boundary.
+   - Each call to the `fun` function has a time complexity of O(log n), and this loop runs approximately O(n) times.
+   - Therefore, the time complexity of this part is O(n log n).
+
+4. Phase 2 (Shifting the largest element):
+   - After the first phase, there is a second loop that performs `n` swaps, one for each element starting from the second one.
+   - Each swap takes constant time O(1), and this loop runs n times, resulting in a time complexity of O(n).
+
+Total Time Complexity:
+   - Insertion into priority queue: O(n log n)
+   - Sorting phase (Phase 1): O(n log n)
+   - Shifting phase (Phase 2): O(n)
+
+Thus, the overall time complexity is O(n log n).

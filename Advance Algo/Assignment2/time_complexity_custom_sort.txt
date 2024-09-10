@@ -1,0 +1,56 @@
+Overview of customSort Function:
+
+1. Phase 1: Sorting the Array Except the First Element
+   - In this phase, we repeatedly find the second-largest element in the current range [low, high] of the array, swap it with the element at the current high, and then decrement high. This process is repeated until the array is sorted except for the first element.
+   
+2. Phase 2: Shifting the First Element
+   - In this phase, the first element, which is the largest, is shifted towards the end by swapping it with the subsequent elements in the array.
+
+Breakdown of Each Function:
+
+fun Function (Finding the Second Largest Element):
+
+This function iterates over the range [low, high] and performs comparisons to find the second-largest element and its index.
+
+- Time Complexity of fun:  
+  The fun function makes a single pass over the array elements in the range [low, high]. In the worst case, this range is of size n, and the function takes O(n) time in the first iteration.
+  
+  In subsequent iterations, the size of the range decreases by 1, so the time complexity for each call of fun will be O(high - low + 1). In the worst case, the first call to fun will require O(n) comparisons, the second will require O(n - 1), and so on, until O(1) in the final iteration.
+
+Phase 1: Sorting the Array Except the First Element:
+
+The outer loop in customSort makes repeated calls to fun to sort the array, reducing the range of [low, high] by 1 in each iteration.
+
+- Number of Iterations in Phase 1:  
+  The loop in customSort runs while low < high, which means it iterates n - 1 times, with each iteration calling fun on a decreasing range of the array.
+
+  - The first call to fun takes O(n) time (for the full array),
+  - The second call takes O(n - 1) time,
+  - The third takes O(n - 2), and so on, down to the last call which takes O(1) time.
+  
+  So, the total time complexity for Phase 1 is the sum of these operations:
+
+  O(n) + O(n - 1) + O(n - 2) + … + O(1) = O(n(n + 1)/2) = O(n^2)
+
+Phase 2: Shifting the First Element:
+
+After Phase 1, the largest element is at the first position, and Phase 2 shifts this element to the end by swapping it with the subsequent elements in the array.
+
+- Number of Swaps in Phase 2:  
+  This phase performs n - 1 swaps (one for each element after the first).
+
+- Time Complexity of Phase 2:  
+  Since each swap is a constant-time operation, this phase takes O(n - 1) time, which simplifies to O(n).
+
+Overall Time Complexity:
+
+- Phase 1: Sorting the array except for the first element takes O(n^2) time in the worst case.
+- Phase 2: Shifting the first element takes O(n) time.
+
+Thus, the overall worst-case time complexity of the customSort function is:
+
+O(n^2) + O(n) = O(n^2)
+
+Conclusion:
+
+The worst-case time complexity of the customSort function is O(n²). The dominant factor is Phase 1, where the repeated calls to fun over progressively smaller ranges result in a quadratic time complexity. Phase 2 adds a linear time overhead, but it is negligible compared to the quadratic term.
