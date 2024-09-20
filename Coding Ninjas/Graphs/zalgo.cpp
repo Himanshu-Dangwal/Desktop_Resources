@@ -1,5 +1,5 @@
 // A C++ program that implements Z algorithm for pattern searching
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 void getZarr(string str, int Z[]);
@@ -14,7 +14,12 @@ void search(string text, string pattern)
 	// Construct Z array
 	int Z[l];
 	getZarr(concat, Z);
-
+	Z[0] = 0;
+	for (int i = 0; i < l; i++)
+	{
+		cout << Z[i] << " ";
+	}
+	cout << endl;
 	// now looping through Z array for matching condition
 	for (int i = 0; i < l; ++i)
 	{
@@ -22,7 +27,7 @@ void search(string text, string pattern)
 		// length we got the pattern
 		if (Z[i] == pattern.length())
 			cout << "Pattern found at index "
-				<< i - pattern.length() -1 << endl;
+				 << i - pattern.length() - 1 << endl;
 	}
 }
 
@@ -47,22 +52,22 @@ void getZarr(string str, int Z[])
 			// for "ababab" and i = 1, the value of R
 			// remains 0 and Z[i] becomes 0. For string
 			// "aaaaaa" and i = 1, Z[i] and R become 5
-			while (R<n && str[R-L] == str[R])
+			while (R < n && str[R - L] == str[R])
 				R++;
-			Z[i] = R-L;
+			Z[i] = R - L;
 			R--;
 		}
 		else
 		{
 			// k = i-L so k corresponds to number which
 			// matches in [L,R] interval.
-			k = i-L;
+			k = i - L;
 
 			// if Z[k] is less than remaining interval
 			// then Z[i] will be equal to Z[k].
 			// For example, str = "ababab", i = 3, R = 5
 			// and L = 2
-			if (Z[k] < R-i+1)
+			if (Z[k] < R - i + 1)
 				Z[i] = Z[k];
 
 			// For example str = "aaaaaa" and i = 2, R is 5,
@@ -71,9 +76,9 @@ void getZarr(string str, int Z[])
 			{
 				// else start from R and check manually
 				L = i;
-				while (R<n && str[R-L] == str[R])
+				while (R < n && str[R - L] == str[R])
 					R++;
-				Z[i] = R-L;
+				Z[i] = R - L;
 				R--;
 			}
 		}
@@ -88,4 +93,3 @@ int main()
 	search(text, pattern);
 	return 0;
 }
-
