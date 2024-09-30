@@ -30,7 +30,6 @@ void search(string text, string pattern)
 				 << i - pattern.length() - 1 << endl;
 	}
 }
-
 // Fills Z array for given string str[]
 void getZarr(string str, int Z[])
 {
