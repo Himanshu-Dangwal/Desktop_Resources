@@ -107,6 +107,7 @@ AVLtree *insertNode(AVLtree *tree, int key)
         tree->right = rightRotate(tree->right);
         return leftRotate(tree);
     }
+
     return tree;
 }
 
