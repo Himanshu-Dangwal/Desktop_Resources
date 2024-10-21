@@ -6,9 +6,8 @@ using namespace std;
 class MaxHeap
 {
 private:
-    std::vector<int> heap;
+    vector<int> heap;
 
-    // Helper function to maintain the max-heap property.
     void heapify(int index)
     {
         int largest = index;
@@ -27,7 +26,7 @@ private:
 
         if (largest != index)
         {
-            std::swap(heap[index], heap[largest]);
+            swap(heap[index], heap[largest]);
             heapify(largest);
         }
     }
@@ -43,7 +42,7 @@ public:
         int index = heap.size() - 1;
         while (index > 0 && heap[index] > heap[(index - 1) / 2])
         {
-            std::swap(heap[index], heap[(index - 1) / 2]);
+            swap(heap[index], heap[(index - 1) / 2]);
             index = (index - 1) / 2;
         }
     }
@@ -79,26 +78,47 @@ public:
     {
         return heap.size();
     }
+
+    // Display
+    void display()
+    {
+        for (auto ele : heap)
+        {
+            cout << ele << " ";
+        }
+    }
 };
-
-int findKthLargest(std::vector<int> &nums, int k)
-{
-    MaxHeap maxHeap;
-
-    for (int num : nums)
-    {
-        maxHeap.insert(num);
-    }
-
-    // Extract the kth largest element.
-    for (int i = 1; i < k; i++)
-    {
-        maxHeap.extractMax();
-    }
-
-    return maxHeap.getMax();
-}
 
 int main()
 {
+    int n;
+    cin >> n;
+
+    vector<int> A;
+    for (int i = 0; i < n; cin >> A[i++])
+        ;
+
+    MaxHeap H = MaxHeap();
+    for (int ele : A)
+    {
+        H.insert(ele);
+    }
+
+    H.display();
+    cout << endl;
+
+    int m;
+    cin >> m;
+
+    vector<int> B;
+    for (int i = 0; i < m; cin >> B[i++])
+        ;
+
+    for (auto ele : B)
+    {
+        H.insert(ele);
+    }
+
+    H.display();
+    return 0;
 }
