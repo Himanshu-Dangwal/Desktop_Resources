@@ -4,7 +4,8 @@
     "iostream": "cpp",
     "vector": "cpp",
     "iosfwd": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "set": "cpp"
   },
   "python.analysis.extraPaths": [
     "./FileHandling/Solution"

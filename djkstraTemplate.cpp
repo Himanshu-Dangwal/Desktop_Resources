@@ -38,17 +38,27 @@ vector<ll> djkstra(vector<vector<PII>> &adj, int src, int n)
     return weight;
 }
 
-void solve()
-{
-}
-
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
+    int n;
+    cin >> n;
+    vector<vector<PII>> adj(n);
+
+    int m;
+    cin >> m;
+
+    for (int i = 0; i < m; i++)
     {
-        solve();
+        int x, y, z;
+        cin >> x >> y >> z;
+
+        adj[x].push_back({y, z});
+        adj[y].push_back({x, z});
     }
+
+    vector<ll> distance = djkstra(adj, 0, n);
+    for (auto it : distance)
+        cout << it << " ";
+
     return 0;
 }
