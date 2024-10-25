@@ -13,7 +13,7 @@ public:
         name = s;
     }
 
-    bool operator<(const Data &other) const
+    bool operator<(const Data& other) const
     {
         return val < other.val;
     }
