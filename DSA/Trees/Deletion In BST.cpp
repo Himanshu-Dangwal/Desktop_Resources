@@ -1,5 +1,3 @@
-// Binary Search Trees::
-// Deletion
 #include <bits/stdc++.h>
 using namespace std;
 #define endl "\n"
@@ -9,7 +7,7 @@ typedef long long ll;
 struct Node
 {
 	int data;
-	Node *left, *right;
+	Node* left, * right;
 
 	Node(int val)
 	{
@@ -19,7 +17,7 @@ struct Node
 	}
 };
 
-Node *insert(Node *root, int val)
+Node* insert(Node* root, int val)
 {
 	if (root == NULL)
 	{
@@ -37,7 +35,7 @@ Node *insert(Node *root, int val)
 	return root;
 }
 
-void Inorder(Node *root)
+void Inorder(Node* root)
 {
 	if (root == NULL)
 		return;
@@ -47,9 +45,9 @@ void Inorder(Node *root)
 	Inorder(root->right);
 }
 
-Node *InorderSucc(Node *root)
+Node* InorderSucc(Node* root)
 {
-	Node *curr = root;
+	Node* curr = root;
 	while (curr && curr->left != NULL)
 	{
 		curr = curr->left;
@@ -57,7 +55,7 @@ Node *InorderSucc(Node *root)
 	return curr;
 }
 
-Node *deleteInBST(Node *root, int key)
+Node* deleteInBST(Node* root, int key)
 {
 	if (key > root->data)
 	{
@@ -71,19 +69,19 @@ Node *deleteInBST(Node *root, int key)
 	{
 		if (root->right == NULL)
 		{
-			Node *temp = root->left;
+			Node* temp = root->left;
 			free(root);
 			return temp;
 		}
 		else if (root->left == NULL)
 		{
-			Node *temp = root->right;
+			Node* temp = root->right;
 			free(root);
 			return temp;
 		}
 		else
 		{
-			Node *temp = InorderSucc(root->right);
+			Node* temp = InorderSucc(root->right);
 			root->data = temp->data;
 			root->right = deleteInBST(root->right, root->data);
 		}
@@ -91,7 +89,7 @@ Node *deleteInBST(Node *root, int key)
 	return root;
 }
 
-void Preorder(Node *temp)
+void Preorder(Node* temp)
 {
 	if (temp == NULL)
 		return;
@@ -111,7 +109,7 @@ int main()
 	{
 		cin >> arr[i];
 	}
-	Node *root = new Node(arr[0]);
+	Node* root = new Node(arr[0]);
 	for (int i = 1; i < n; i++)
 	{
 		root = insert(root, arr[i]);
@@ -121,10 +119,10 @@ int main()
 
 	int key;
 	cin >> key;
-	Node *temp = deleteInBST(root, key);
+	Node* temp = deleteInBST(root, key);
 	cout << endl;
-	Preorder(temp);
-	cout << endl;
+	// Preorder(temp);
+	// cout << endl;
 	Inorder(temp);
 	//	cout<<root->left->data;
 	return 0;
