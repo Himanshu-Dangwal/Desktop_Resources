@@ -14,9 +14,7 @@ using namespace std;
 #define MAX 1000000
 
 typedef long long ll;
-#define MOD 1000000007
 
-using namespace std;
 
 class Triplet
 {
