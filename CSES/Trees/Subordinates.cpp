@@ -1,19 +1,30 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#pragma GCC target("popcnt")
-#define endl "\n"
-#define MOD 1000000007
-typedef long long ll;
-#include <ext/pb_ds/assoc_container.hpp>
-using namespace __gnu_pbds;
-typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> indexed_set;
-// find_by_order() 
-// order_of_key()
 
+const int maxN = 200005;
+int n, s[maxN];
+vector<int> adj[maxN];
 
-int main()
-{
-    int n;
+void dfs(int u = 0, int par = -1) {
+    s[u] += 1;
+    for (int v : adj[u]) {
+        dfs(v, u);
+        s[u] += s[v];
+    }
+}
+
+int main() {
     cin >> n;
-    return 0;
+    for (int i = 1;i < n;i++) {
+        int j;
+        cin >> j;
+
+        j--;
+        adj[j].push_back(i);
+    }
+
+    dfs();
+    for (int i = 0;i < n;i++) {
+        cout << s[i] - 1 << " ";
+    }
 }
