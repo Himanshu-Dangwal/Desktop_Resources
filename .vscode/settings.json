@@ -34,7 +34,11 @@
     "compare": "cpp",
     "bitset": "cpp",
     "queue": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "*.tcc": "cpp",
+    "rope": "cpp",
+    "slist": "cpp",
+    "dynamic_bitset": "cpp"
   },
   "python.analysis.extraPaths": [
     "./FileHandling/Solution"
