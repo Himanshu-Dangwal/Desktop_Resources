@@ -38,7 +38,8 @@
     "*.tcc": "cpp",
     "rope": "cpp",
     "slist": "cpp",
-    "dynamic_bitset": "cpp"
+    "dynamic_bitset": "cpp",
+    "__node_handle": "cpp"
   },
   "python.analysis.extraPaths": [
     "./FileHandling/Solution"
