@@ -39,7 +39,8 @@
     "rope": "cpp",
     "slist": "cpp",
     "dynamic_bitset": "cpp",
-    "__node_handle": "cpp"
+    "__node_handle": "cpp",
+    "functional": "cpp"
   },
   "python.analysis.extraPaths": [
     "./FileHandling/Solution"
