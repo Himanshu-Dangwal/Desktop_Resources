@@ -11,42 +11,35 @@ typedef long long ll;
 // find_by_order() 
 // order_of_key()
 
-unordered_map<int, int> dp;
-int dfs(int n) {
-    if (n == 0) {
-        return 0;
-    }
 
-    if (n < 10) {
-        dp[n] = 1;
+int dfs(int n, vector<int>& dp) {
+
+    if (n == 10) return 2;
+    if (n <= 9) {
         return 1;
     }
 
-    if (dp.find(n) != dp.end()) {
-        return dp[n];
-    }
+    if (dp[n] != -1) return dp[n];
 
     string str = to_string(n);
-    for (int i = 0;i < str.size();i++) {
-        if (str[i] - '0' != 0) {
-            int val = dfs(n - (str[i] - 48));
-            if (dp.find(n) == dp.end()) {
-                dp[n] = 1 + val;
-            }
-            else {
-                dp[n] = min(dp[n], 1 + val);
-            }
-        }
+    int mini = INT_MAX;
+    int sz = str.size();
+    for (int i = 0;i < sz;i++) {
+        int val = str[i] - '0';
+        if (val == 0) continue;
+        int pAns = 1 + dfs(n - val, dp);
+        mini = min(mini, pAns);
     }
 
-    return dp[n];
+    return dp[n] = mini;
 }
+
 
 int main()
 {
-    dp[0] = 0;
     int n;
     cin >> n;
-    cout << dfs(n);
-    return 0;
+    vector<int> dp(n + 1, -1);
+    // cout << n;
+    cout << dfs(n, dp);
 }

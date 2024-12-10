@@ -14,21 +14,22 @@ typedef long long ll;
 
 int main()
 {
-    int n, x;
-    cin >> n >> x;
+    ll n, sum;
+    cin >> n >> sum;
 
-    vector<int> coins(n);
+    vector<ll > coins(n);
     for (int i = 0;i < n;cin >> coins[i++]);
-    sort(coins.begin(), coins.end());
-    vector<int> dp(x + 1, 0);
+
+    vector<ll> dp(sum + 1, 0LL);
     dp[0] = 1;
 
-    for (int coin : coins) {
-        for (int i = coin;i <= x;i++) {
+    sort(coins.begin(), coins.end());
+    for (ll coin : coins) {
+        for (ll i = coin;i <= sum;i++) {
             dp[i] = (dp[i] % MOD + dp[i - coin] % MOD) % MOD;
         }
     }
 
-    cout << dp[x] % MOD;
+    cout << dp[sum] % MOD;
     return 0;
 }

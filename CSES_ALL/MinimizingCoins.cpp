@@ -14,22 +14,25 @@ typedef long long ll;
 
 int main()
 {
-    int n, x;
-    cin >> n >> x;
+    int n, sum;
+    cin >> n >> sum;
 
     vector<int> coins(n);
     for (int i = 0;i < n;cin >> coins[i++]);
 
-    vector<int> dp(x + 1, INT_MAX);
-
+    vector<int> dp(sum + 1, INT_MAX);
     dp[0] = 0;
-    for (int i = 1;i <= x;i++) {
+    for (int i = 1;i <= sum;i++) {
         for (int coin : coins) {
-            if (i - coin >= 0 && dp[i - coin] != INT_MAX) {
-                dp[i] = min(dp[i], 1 + dp[i - coin]);
+            if (coin <= i) {
+                if (dp[i - coin] != INT_MAX) {
+                    dp[i] = min(dp[i], 1 + dp[i - coin]);
+                }
             }
         }
     }
-    cout << (dp[x] == INT_MAX ? -1 : dp[x]);
+
+    int ans = dp[sum] == INT_MAX ? -1 : dp[sum];
+    cout << ans;
     return 0;
 }

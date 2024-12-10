@@ -14,20 +14,19 @@ typedef long long ll;
 
 int main()
 {
-    int n;
+    ll n;
     cin >> n;
 
-    vector<int> dp(n + 1, 0);
+    vector<ll> dp(n + 1, 0LL);
     dp[0] = 1;
     dp[1] = 1;
 
     for (int i = 2;i <= n;i++) {
-        for (int j = 6;j >= 1;j--) {
-            if (i - j >= 0) {
-                dp[i] = (dp[i] % MOD + dp[i - j] % MOD) % MOD;
-            }
+        for (int j = 1;j <= 6 && i - j >= 0;j++) {
+            dp[i] = (dp[i] % MOD + dp[i - j] % MOD) % MOD;
         }
     }
+
     cout << dp[n] % MOD;
     return 0;
 }
