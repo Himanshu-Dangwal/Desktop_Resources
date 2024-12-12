@@ -17,18 +17,18 @@ int main()
     cin >> t;
 
     while (t--) {
-        int n;
-        cin >> n;
+        int n, m;
+        cin >> n >> m;
 
         vector<int> arr(n);
-        for (int i = 0;i < n;cin >> arr[i++]);
+        int flag = 0;
+        for (int i = 0;i < n;i++) {
+            cin >> arr[i];
+            if (arr[i] == m) flag = 1;
+        }
 
-        if (arr[0] != 1) {
-            cout << "NO\n";
-        }
-        else {
-            cout << "YES\n";
-        }
+        if (flag) cout << "YES\n";
+        else cout << "NO\n";
     }
     return 0;
 }
