@@ -27,7 +27,7 @@ void search(string text, string pattern)
 		// length we got the pattern
 		if (Z[i] == pattern.length())
 			cout << "Pattern found at index "
-				 << i - pattern.length() - 1 << endl;
+			<< i - pattern.length() - 1 << endl;
 	}
 }
 // Fills Z array for given string str[]
@@ -87,8 +87,8 @@ void getZarr(string str, int Z[])
 // Driver program
 int main()
 {
-	string text = "GEEKS FOR GEEKS";
-	string pattern = "GEEK";
+	string text = "kpygkivtlqoocskpygkpygkivtlqoocssnextkqzjpycbylkaondskivtlqoocssnextkqzjpycbylkaondssnextkqzjpycbylkaondshijzgaovndkjiiuwjtcpdpbkrfsi";
+	string pattern = "kpygkivtlqoocssnextkqzjpycbylkaonds";
 	search(text, pattern);
 	return 0;
 }
